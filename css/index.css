@@ -42,13 +42,13 @@ table {
 }
 
 *{
-    box-sizing:border-box;
+    box-sizing:border-box; /* respect the width of the box, apply padding or border within the width it's been given not in addition to it*/
     max-width:100%; /*you can never be bigger than your parent - this is going to stop that dreaded horizontal scroll bar*/
     border:1px solid grey;
 }
 /*general styles*/
 html{
-    font-size:62.5%; /* 1 rem = 10px */
+    font-size:62.5%; /* Dafault browser font-size is 16px, this makes it so that the 1 rem = 10px it also gives the user control over bumping up or down the fornt size because % is  */
 }
 body{
     line-height:1.5;
@@ -93,8 +93,11 @@ nav{
     display:flex;
     justify-content: space-between;
     width:100%;
+    align-items: center;
     position:fixed;
+    top: 0;
     background-color:rgba(255,255,255,0.8);
+    z-index: 999; /*will make sure scrolls behind nav*/
 }
 .logo{
     width:10%;
@@ -103,15 +106,28 @@ nav{
     align-items: center;
 }
 .logo img{
-    width:60%;
+    width:60%;/* try 70% to experiment*/
 }
 .links{
-    width:60%;
+    width:60%; /* try 50% to experiment*/
     display:flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
+#top{
+    height: 90vh;
+    background-image: url('../images/redbirdproperty2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+}
 /*About Section Styles*/
 #about{
     display:flex;
